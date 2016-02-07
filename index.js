@@ -20,7 +20,17 @@ app.post('/api/full/:trashcan', function(req, res) {
 });
 
 app.get('/api', function(req, res) {
-  res.send(JSON.stringify(trashStatus));
+  var results = [];
+  for (prop in trashStatus) {
+    if (trashStatus.hasOwnProperty(prop)) {
+      results.push({
+        name: prop,
+        status: trashStatus[prop]
+      });
+    }
+  }
+  console.log(results);
+  res.send(JSON.stringify(results));
 });
 
 app.use(express.static(PUBLIC_PATH));
