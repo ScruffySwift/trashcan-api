@@ -1,9 +1,14 @@
 var express = require('express');
 var app = express();
 
-app.post('/update/:trashcan', function(req, res) {
+app.post('/empty/:trashcan', function(req, res) {
   var trashcanName = req.params.trashcan;
-  console.log(trashcanName);
+  console.log(trashcanName, 'emptied');
+});
+
+app.post('/full/:trashcan', function(req, res) {
+  var trashcanName = req.params.trashcan;
+  console.log(trashcanName, 'full');
   res.send('OK');
 });
 
