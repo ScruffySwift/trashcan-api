@@ -4,7 +4,7 @@
   "description": "Trashcan API",
   "main": "index.js",
   "scripts": {
-    "start": "if [ \"$NODE_ENV\" == \"production\" ]; then node index.js; else nodemon index.js; fi",
+    "start": "if [ \"$NODE_ENV\" -eq \"production\" ]; then node index.js; else nodemon index.js; fi",
     "test": "true"
   },
   "repository": {
