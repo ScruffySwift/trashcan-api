@@ -67,7 +67,7 @@ $interval(function(){
           //} 
           count++;     
         });
-},15000);
+},5000);
 /*$scope.search = function() {
     console.log('swag'); //swaggy
     $scope.apiError = false;

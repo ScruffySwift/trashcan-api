@@ -44,14 +44,14 @@ app.get('/api', function(req, res) {
     Bucket: 'testinghackathoniot',
     Body : alexaUpdate
   };
-  /*s3.putObject(params, function(err, data) {
+  s3.putObject(params, function(err, data) {
     if (err) {
       console.log(err);
       //res.status(500).send('Could not save data to s3');
     } else {
         console.log('success');
       }
-  });*/
+  });
   res.send(JSON.stringify(results));
 });
 
