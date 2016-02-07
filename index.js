@@ -6,6 +6,7 @@ var AWS = require('aws-sdk');
 AWS.config.update({region: 'us-east-1'});
 var s3 = new AWS.S3();
 var PUBLIC_PATH = process.env.PUBLIC_PATH || 'public';
+var port = process.env.PORT || 3000;
 
 var trashStatus = {};
 
@@ -56,6 +57,6 @@ app.get('/api', function(req, res) {
 
 app.use(express.static(PUBLIC_PATH));
 
-app.listen(3000, '0.0.0.0', function () {
+app.listen(port, '0.0.0.0', function () {
   console.log('Example app listening on port 3000!');
 });
