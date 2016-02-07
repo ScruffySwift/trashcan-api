@@ -29,7 +29,6 @@ app.get('/api', function(req, res) {
       });
     }
   }
-  console.log(results);
   res.send(JSON.stringify(results));
 });
 
