@@ -2,6 +2,9 @@ angular.module("app").controller('mapController', ['$rootScope', '$document', 'M
 $scope.place = {};
 var resl;
 var marks = [];
+var fullMarks = [];
+var emptyMarks = [];
+var allpins = [];
 if($rootScope.reload == true){
     $window.location.reload(true);
 }
@@ -16,6 +19,7 @@ message.push({lat: 34.056138,lon: -117.821472, name: "trash6", status : "empty"}
 message.push({lat: 34.057875,lon: -117.820737, name: "trash7", status : "empty"});
 message.push({lat: 34.057062,lon: -117.821807, name: "trash8", status : "empty"});
 message.push({lat: 34.055336,lon: -117.820925, name: "trash9", status : "empty"});
+message.push({lat: 34.056376,lon: -117.821378, name: "trashsensor", status : "empty"})
 //var message2 = $cookies.getObject('locationChoice');
 //var message3 = $cookies.getObject('locationChoice2');
 //if(message3 != undefined){var message = message2.concat(message3);}
@@ -34,28 +38,36 @@ $interval(function(){
           empty = [];
           full = [];
           pins = res.data;
+          console.log(pins);
           //pins= [{name: "trash0", status : "full"}];
           for(i = 0; i < pins.length; i++){
             if(pins[i].status != message[i].status)
             {
                 if(pins[i].status == "empty")
                 {
+                    //console.log(pins[i].status);
                     message[i].status = "empty";
                     empty.push(message[i]);
+                    emptyMarks.push(marks[i]);
                 }
                 else{
+                    //console.log(pins[i].status);
                     message[i].status = "full";
                     full.push(message[i]);
+                    fullMarks.push(marks[i]);
                 }
 
             }
+
           }
+            changeToEmpty(empty);
           changeToFull(full);
-          changeToEmpty(empty);
+
+
           //} 
           count++;     
         });
-},10000);
+},15000);
 /*$scope.search = function() {
     console.log('swag'); //swaggy
     $scope.apiError = false;
@@ -130,23 +142,26 @@ function drop() {
 
 function changeToFull(pins){
     var icon2 = 'images/alsothisimagetooplease.gif';
-    //Map.removeMarker(pins);
-    for(i = 0; i < pins.length; i++){
-        var pos = new google.maps.LatLng(pins[i].lat, pins[i].lon);
+    for(i = 0; i < message.length; i++){
+        if(message[i].status == "full"){
+        var pos = new google.maps.LatLng(message[i].lat, message[i].lon);
         res = {position : pos,
             icon : icon2};
-        marks.push(Map.addMarker(res));
+            allpins.push(Map.addMarker(res));
+        }
     }
 }
 
 function changeToEmpty(pins){
     var icon3 = 'images/Lini.png';
-    //Map.removeMarker(pins);
+    Map.removeMarker(allpins);
+    allpins = [];
     for(i = 0; i < pins.length; i++){
-        var pos = new google.maps.LatLng(pins[i].lat, pins[i].lon);
-        res = {position : pos,
+        var pos2 = new google.maps.LatLng(pins[i].lat, pins[i].lon);
+        res2 = {position : pos2,
             icon : icon3};
-        marks.push(Map.addMarker(res));
+        var swag = Map.addMarker(res2);
+        //console.log("HELP");
     }
 }
 
