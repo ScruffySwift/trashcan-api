@@ -39,7 +39,7 @@ app.post('/api/full/:trashcan', function(req, res) {
 app.get('/api', function(req, res) {
   var results = [];
   var alexaUpdate = "These trash can are full ";
-  boolean swagger = false;
+  var swagger = false;
   alexaUpdate = JSON.stringify(alexaUpdate);
   for (prop in trashStatus) {
     if(trashStatus[prop] == "full"){
