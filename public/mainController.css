@@ -1,0 +1,110 @@
+.circle_menu {
+  width: 56px;
+  height: 56px;
+  margin: 0 0.5rem 0 0.5rem;
+  border-radius: 56px;
+  background: #e91e63;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  line-height: 56px;
+  font-size: 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  bottom: 5px;
+  right: 0px;
+  z-index: 9999;
+}
+
+.menu_btn {
+  -webkit-transition: all 250ms ease;
+          transition: all 250ms ease;
+  background: #e91e63;
+}
+
+.open .menu_btn {
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.open .menu {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
+  opacity: 1;
+}
+.open .menu .menu_itm {
+  opacity: 1;
+}
+
+.menu {
+  height: 400px;
+  width: 400px;
+  background-color: #F06292;
+  position: fixed;
+  bottom: -200px;
+  right: -200px;
+  z-index: 999;
+  border-radius: 50%;
+  box-shadow: -2px -1px 3px rgba(0, 0, 0, 0.24);
+  opacity: 0;
+  -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-transition: all 200ms ease-in-out;
+          transition: all 200ms ease-in-out;
+}
+.menu .menu_itm {
+  display: block;
+  line-height: 56px;
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease-in 215ms;
+          transition: opacity 200ms ease-in 215ms;
+}
+.menu .menu_itm:nth-child(1) {
+  right: 220px;
+  bottom: 340px;
+}
+.menu .menu_itm:nth-child(2) {
+  right: 315px;
+  bottom: 285px;
+}
+.menu .menu_itm:nth-child(3) {
+  right: 350px;
+  bottom: 200px;
+}
+
+.page {
+  z-index: 3;
+  top: 10%;
+  height: 50%;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+}
+
+html, body {
+  background-color: #7986CB;
+}
+
+
+h3 img {
+    max-height: 50px;
+}
+#map { 
+    height: 720px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
