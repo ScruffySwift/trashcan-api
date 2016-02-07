@@ -18,7 +18,8 @@ var trashStatus = {
   trash6: 'empty',
   trash7: 'empty',
   trash8: 'empty',
-  trash9: 'empty'
+  trash9: 'empty',
+  hackpolytrash: 'empty'
 };
 
 app.post('/api/empty/:trashcan', function(req, res) {
