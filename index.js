@@ -8,7 +8,18 @@ var s3 = new AWS.S3();
 var PUBLIC_PATH = process.env.PUBLIC_PATH || 'public';
 var port = process.env.PORT || 3000;
 
-var trashStatus = {};
+var trashStatus = {
+  trash0: 'empty',
+  trash1: 'empty',
+  trash2: 'empty',
+  trash3: 'empty',
+  trash4: 'empty',
+  trash5: 'empty',
+  trash6: 'empty',
+  trash7: 'empty',
+  trash8: 'empty',
+  trash9: 'empty'
+};
 
 app.post('/api/empty/:trashcan', function(req, res) {
   var trashcanName = req.params.trashcan;

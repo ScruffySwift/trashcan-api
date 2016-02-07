@@ -19,7 +19,7 @@ message.push({lat: 34.056138,lon: -117.821472, name: "trash6", status : "empty"}
 message.push({lat: 34.057875,lon: -117.820737, name: "trash7", status : "empty"});
 message.push({lat: 34.057062,lon: -117.821807, name: "trash8", status : "empty"});
 message.push({lat: 34.055336,lon: -117.820925, name: "trash9", status : "empty"});
-message.push({lat: 34.056376,lon: -117.821378, name: "trashsensor", status : "empty"})
+message.push({lat: 34.056376,lon: -117.821378, name: "Lini is Trash", status : "empty"})
 //var message2 = $cookies.getObject('locationChoice');
 //var message3 = $cookies.getObject('locationChoice2');
 //if(message3 != undefined){var message = message2.concat(message3);}
