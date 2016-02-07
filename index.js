@@ -42,7 +42,7 @@ app.get('/api', function(req, res) {
     Key: 'text.txt',
     Bucket: 'testinghackathoniot',
     Body : alexaUpdate
-  }; 
+  };
   s3.putObject(params, function(err, data) {
     if (err) {
       console.log(err);
@@ -56,6 +56,6 @@ app.get('/api', function(req, res) {
 
 app.use(express.static(PUBLIC_PATH));
 
-app.listen(3000, function () {
+app.listen(3000, '0.0.0.0', function () {
   console.log('Example app listening on port 3000!');
 });
