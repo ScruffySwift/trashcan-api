@@ -26,11 +26,13 @@ app.post('/api/full/:trashcan', function(req, res) {
 
 app.get('/api', function(req, res) {
   var results = [];
-  var alexaUpdate = "These trash cans are full ";
+  var alexaUpdate = "These trash can are full ";
+  boolean swagger = false;
   alexaUpdate = JSON.stringify(alexaUpdate);
   for (prop in trashStatus) {
     if(trashStatus[prop] == "full"){
       alexaUpdate += prop;
+      swagger = true;
     }
     if (trashStatus.hasOwnProperty(prop)) {
       results.push({
@@ -38,6 +40,9 @@ app.get('/api', function(req, res) {
         status: trashStatus[prop]
       });
     }
+  }
+  if(swagger == false){
+    var alexaUpdate = "There are no full trashcans this hackathon is lit";
   }
   var params = {
     Key: 'text.txt',
