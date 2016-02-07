@@ -17,11 +17,7 @@ app.post('/full/:trashcan', function(req, res) {
   res.send('OK');
 });
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
-app.get('/info', function(req, res) {
+app.get('/', function(req, res) {
   res.send(JSON.stringify(trashStatus));
 });
 
